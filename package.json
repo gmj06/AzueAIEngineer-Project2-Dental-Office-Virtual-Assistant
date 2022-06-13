@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "botbuilder-ai": "^4.16.0"
+  }
+}
