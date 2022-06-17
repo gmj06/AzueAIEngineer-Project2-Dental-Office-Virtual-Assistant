@@ -46,10 +46,11 @@ class IntentRecognizer {
     }
 
     getDateEntity(result) {
-        const dateEntity = result.entities.dat;
+        const dateEntity = result.entities.date;
         if (!dateEntity || !dateEntity[0]) return undefined;
         return dateEntity;
     }
+    
 }
 
 module.exports = IntentRecognizer
