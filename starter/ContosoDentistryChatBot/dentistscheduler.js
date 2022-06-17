@@ -5,15 +5,14 @@ class DentistScheduler {
             const times = await response.json()
             let responseText = `Current time slots available: `
             times.map(time => {
-                responseText += `
-${time}`
+                responseText += `${time}, `
             })
             return responseText
         }
 
-        this.scheduleAppointment = async (time) => {
-            const response = await fetch(configuration.SchedulerEndpoint + "schedule", { method: "post", body: { time: time } })
-            let responseText = `An appointment is set for ${time}.`
+        this.scheduleAppointment = async (time, date) => {
+            const response = await fetch(configuration.SchedulerEndpoint + "schedule", { method: "post", body: { time: time, date: date } })
+            let responseText = `An appointment is set for ${date} at ${time}.`
             return responseText
         }
     }
